@@ -7,7 +7,7 @@ services:
       - AUTO_START_PXE=true
     privileged: true
     volumes:
-      - /srv/dev-disk-by-id-md-name-evha-0/appdata/iventoy/iso:/var/iventoy/iso
+      - iso:/var/iventoy/iso
     ports:
       - 3067:67/udp
       - 3068:69/udp
@@ -16,3 +16,6 @@ services:
       - 16000:16000/tcp
       - 10809:10809/tcp
     restart: unless-stopped
+volumes:
+  iso:
+    external: true
