@@ -7,7 +7,7 @@ RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/
 RUN apk add libc6-compat
 RUN apk add --force-overwrite glibc-2.35-r1.apk
 
-ADD iventoy-1.0.20-linux-free.tar.gz /app
+ADD https://github.com/ventoy/PXE/releases/download/v1.0.20/iventoy-1.0.20-linux-free.tar.gz /app
 RUN mv /app/iventoy-1.0.20 /var/iventoy
 #DHCP Server Port
 EXPOSE 67/udp
