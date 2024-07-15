@@ -2,16 +2,16 @@ version: "3.0"
 
 services:
   iventoy:
-    image: iventoy
+    image: iventoy:${IMAGE_VERSION:-latest}
     container_name: iventoy
     privileged: true
     networks:
       iventoy-network:
         ipv4_address: 174.15.0.100
     volumes:
-      - /<path to iso>:/var/iventoy/iso
-      - /<path to logs>:/var/iventoy/log
-      - /<path to scripts>:/user/scripts/
+      - ${PATH_ISO}:/var/iventoy/iso
+      - ${PATH_LOGS}:/var/iventoy/log
+      - ${PATH_SCRIPTS}:/user/scripts/
       - data:/var/iventoy/data
     ports:
       - 67:67/udp #DHCP
