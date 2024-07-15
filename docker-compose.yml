@@ -3,8 +3,6 @@ services:
   iventoy:
     image: iventoy
     container_name: iventoy
-    environment:
-      - AUTO_START_PXE=true
     privileged: true
     volumes:
       - iso:/var/iventoy/iso
