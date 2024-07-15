@@ -25,4 +25,4 @@ EXPOSE 16000/tcp
 EXPOSE 10809/tcp
 
 SHELL ["/bin/bash", "-c "]
-ENTRYPOINT ["/bin/bash", "-c" , "cd /var/iventoy && /bin/bash ./iventoy.sh start && tail -f /dev/null"]
+ENTRYPOINT ["/bin/bash", "-c" , "cd /var/iventoy && /bin/bash ./iventoy.sh start && tail -f log/log.txt"]
