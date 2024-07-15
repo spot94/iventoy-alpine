@@ -7,7 +7,7 @@ docker build . --file Dockerfile --tag iventoy:latest
 ```
 2. Use docker-compose.yml for reference to start-up container
 # Network config example
-I have **Mikrotik hAP ax3** and a server with iVentoy Docker container
+I have **Mikrotik hAP ax3** and a server with iVentoy Docker container.\
 To make PXE work you need to complete next steps:
   1. **iVentoy GUI - change DHCP Server Mode to ExternalNet**\
     ![image](https://github.com/user-attachments/assets/e9686ae9-2876-40e2-b86b-3e0d0c6b5f46)
