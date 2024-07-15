@@ -11,6 +11,7 @@ services:
     volumes:
       - /<path to iso>:/var/iventoy/iso
       - /<path to logs>:/var/iventoy/log
+      - /<path to scripts>:/user/scripts/
       - data:/var/iventoy/data
     ports:
       - 67:67/udp #DHCP
