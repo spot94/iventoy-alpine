@@ -7,7 +7,7 @@ services:
     volumes:
       - /<path to iso>:/var/iventoy/iso
       - /<path to logs>:/var/iventoy/log
-      - /<path to data>:/var/iventoy/data
+      - data:/var/iventoy/data
     ports:
       - 3067:67/udp
       - 3068:69/udp
@@ -16,3 +16,5 @@ services:
       - 16000:16000/tcp
       - 10809:10809/tcp
     restart: unless-stopped
+volumes:
+  data:
