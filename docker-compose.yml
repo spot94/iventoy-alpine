@@ -1,20 +1,33 @@
 version: "3.0"
+
 services:
   iventoy:
     image: iventoy
     container_name: iventoy
     privileged: true
+    networks:
+      iventoy-network:
+        ipv4_address: 174.15.0.100
     volumes:
       - /<path to iso>:/var/iventoy/iso
       - /<path to logs>:/var/iventoy/log
       - data:/var/iventoy/data
     ports:
-      - 3067:67/udp
-      - 3068:69/udp
-      - 3069:69/udp
-      - 26000:26000/tcp
-      - 16000:16000/tcp
-      - 10809:10809/tcp
+      - 67:67/udp #DHCP
+      #- 68:68/udp #DHCP Usually port is busy by 'dhclient' service
+      - 69:69/udp #TFTP
+      - 26000:26000/tcp #HTTP GUI
+      - 16000:16000/tcp #HTTP
+      - 10809:10809/tcp #NBD
     restart: unless-stopped
+
 volumes:
   data:
+  
+networks:
+  iventoy-network:
+    name: iventoy-network
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 174.15.0.0/24
