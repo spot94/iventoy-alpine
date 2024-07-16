@@ -1,5 +1,5 @@
 # iventoy
-Docker image for iventoy: https://iventoy.com/en/index.html
+Alpine-based Dockerized version of iVentoy: https://iventoy.com/en/index.html
 # Install
 1. Build image from Dockerfile
 ```
