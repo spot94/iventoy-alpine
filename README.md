@@ -5,7 +5,7 @@ Alpine-based Dockerized version of iVentoy: https://iventoy.com/en/index.html
 ```
 docker build . --file Dockerfile --tag iventoy:latest
 ```
-2. Use docker-compose.yml for reference to start-up container
+2. Use `docker-compose.yml` for reference to start-up container
 3. You can also use DockerHub image: https://hub.docker.com/r/spot94/iventoy-alpine
 # Network config example
 I have **Mikrotik hAP ax3** and a server with iVentoy Docker container.\
